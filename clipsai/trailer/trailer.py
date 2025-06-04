@@ -36,16 +36,9 @@ class TrailerGenerator:
         self._clip_finder = clip_finder
         self._media_editor = media_editor
         self._fs_manager = FileSystemManager()
+        # Logger will be configured by the application's main entry point (e.g., app/main.py)
+        # This ensures consistent logging levels and formatting.
         self._logger = logging.getLogger(__name__)
-        self._logger.setLevel(logging.DEBUG) # Or configure as needed
-        formatter = logging.Formatter(
-            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-        )
-        # Add console handler if not already configured
-        if not self._logger.handlers:
-            ch = logging.StreamHandler()
-            ch.setFormatter(formatter)
-            self._logger.addHandler(ch)
 
     def generate_basic_trailer(
         self,
