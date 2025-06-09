@@ -169,6 +169,7 @@ class ClipFinder:
                     clip_info["end_time"],
                     clip_info["start_char"],
                     clip_info["end_char"],
+                    score=clip_info.get("norm", 0.0)
                 )
             )
 
